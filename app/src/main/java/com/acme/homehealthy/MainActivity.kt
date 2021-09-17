@@ -33,9 +33,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loadRoutines()
+        loadTrainings()
         setContent {
             HomeHealthyTheme {
-                MainScreen(routines)
+                MainScreen(routines, trainings)
             }
         }
     }
@@ -57,7 +58,7 @@ class MainActivity : ComponentActivity() {
 
     private fun loadTrainings(){
         val trainingInterface = ApiClient.buildTraining()
-        val fetchTraining = trainingInterface.fetchTrainings()
+        val fetchTraining = trainingInterface?.fetchTrainings()
 
         fetchTraining?.enqueue(object : Callback<List<Training>>{
             override fun onResponse(
