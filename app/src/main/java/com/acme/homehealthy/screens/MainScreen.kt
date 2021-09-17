@@ -37,7 +37,7 @@ fun MainScreen(_routines: List<Routine>, _trainings: List<Training>) {
             Greetings(name = "Guapeton")
             RoutinesList(routines = _routines)
 
-            TrainingList(trainings =_trainings )
+            TrainingList(trainings = _trainings)
         }
     }
 
@@ -110,53 +110,17 @@ fun RoutinesRow(routines: Routine) {
 
 @Composable
 fun trainingsView(trainings: Training) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Image(
-            painter = rememberImagePainter(
-                data  = "https://media.revistagq.com/photos/5ca5f3584409ccf84a90aa6e/master/pass/dwayne_johnson_the_rock_9697.jpg"
-            ),
-            contentDescription = trainings.name,
-            modifier = Modifier
-                .size(200.dp, 120.dp)
-                .clip(RoundedCornerShape(25.dp))
-        )
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Column (
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(Purple500)
-                .padding(bottom = 24.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
-                ){
-            Text(
-                text = trainings.name,
-                style = MaterialTheme.typography.h3,
-                textAlign = TextAlign.Center,
-                color = GrayWhite
-            )
-
-            Spacer(modifier = Modifier.height(12.dp))
-
-            Text(
-                text = trainings.description,
-                style = MaterialTheme.typography.caption,
-                textAlign = TextAlign.Center,
-                color = Gray
-            )
-
-        }
+    var imgUrl : String
+    if(trainings.id == 1L){
+        imgUrl = "https://elcomercio.pe/resizer/czgVq4F-823qxacsPteSJCzm0M8=/980x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/ULW4UUDPXJBU7GEARPRFLEWSYU.jpg"
     }
-}
+    else if (trainings.id == 2L){
+        imgUrl = "https://i0.wp.com/once.pe/wp-content/uploads/2021/01/cuto-dice-su-verdad-e1612117753484.jpg"
+    }
+    else{
+        imgUrl = "https://cdn.futbolperuano.com/sdi/2018/09/27/juan-vargas-se-defendio-de-las-criticas-sobre-su-peso-674355.jpg"
+    }
 
-
-@Composable
-fun TrainingList(trainings: List<Training>){
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -164,22 +128,71 @@ fun TrainingList(trainings: List<Training>){
             .wrapContentHeight()
             .padding(start = 20.dp, end = 15.dp, top = 40.dp)
             .clip(RoundedCornerShape(15.dp))
-            .background(color = Color.Transparent))
-            {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(100.dp)
-                        .clip(RoundedCornerShape(12.dp))
-                        .background(MaterialTheme.colors.onSurface)
+            .background(Color.Transparent)
+    )
+    {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(100.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .background(cardNight)
+        )
+
+        Column(
+            modifier = Modifier
+                .fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Image(
+                painter = rememberImagePainter(
+                    data = imgUrl
+                ),
+                contentDescription = trainings.name,
+                modifier = Modifier
+                    .size(200.dp, 120.dp)
+                    .clip(RoundedCornerShape(25.dp))
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(cardNight)
+                    .padding(bottom = 24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = trainings.name,
+                    style = MaterialTheme.typography.h3,
+                    textAlign = TextAlign.Center,
+                    color = Color.White
                 )
-                LazyColumn(){
-                    items(trainings) {
-                        training -> trainingsView(training)
-                    }
-                }
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                Text(
+                    text = trainings.description,
+                    style = MaterialTheme.typography.caption,
+                    textAlign = TextAlign.Center,
+                    color = Color.White
+                )
+
             }
-
-
+        }
+    }
 }
+
+
+
+@Composable
+fun TrainingList(trainings: List<Training>) {
+    LazyColumn() {
+        items(trainings) { training ->
+            trainingsView(training)
+        }
+    }
+}
+
 
