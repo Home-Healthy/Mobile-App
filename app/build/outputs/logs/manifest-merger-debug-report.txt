@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-25:12
+ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-27:12
 MERGED from [com.google.accompanist:accompanist-systemuicontroller:0.18.0] C:\Users\sebas\.gradle\caches\transforms-3\80a68a9f213b65d8ae075dddf45889f6\transformed\jetified-accompanist-systemuicontroller-0.18.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.compose.ui:ui-tooling:1.0.1] C:\Users\sebas\.gradle\caches\transforms-3\ff0044fd9aa5ba92d5c15e0ee1a511db\transformed\jetified-ui-tooling-1.0.1\AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.activity:activity-compose:1.3.1] C:\Users\sebas\.gradle\caches\transforms-3\13bf619afbb00c0be6d5fe035b3f799f\transformed\jetified-activity-compose-1.3.1\AndroidManifest.xml:17:1-24:12
@@ -72,25 +72,29 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\sebas\.gradle\cach
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\sebas\.gradle\caches\transforms-3\05cfd07ef21002621270371403c59e1e\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\sebas\.gradle\caches\transforms-3\2aa8dfeded1bf90a6e679d08537ea38a\transformed\exifinterface-1.3.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\sebas\.gradle\caches\transforms-3\22d4523493623922446755ed5434f4a0\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-25:12
-INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-25:12
+INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml
 		INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-25:12
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-25:12
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:4:22-64
 application
-ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:5:5-23:19
+ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:6:5-25:19
 MERGED from [androidx.compose.ui:ui-tooling:1.0.1] C:\Users\sebas\.gradle\caches\transforms-3\ff0044fd9aa5ba92d5c15e0ee1a511db\transformed\jetified-ui-tooling-1.0.1\AndroidManifest.xml:24:5-28:19
 MERGED from [androidx.compose.ui:ui-tooling:1.0.1] C:\Users\sebas\.gradle\caches\transforms-3\ff0044fd9aa5ba92d5c15e0ee1a511db\transformed\jetified-ui-tooling-1.0.1\AndroidManifest.xml:24:5-28:19
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\sebas\.gradle\caches\transforms-3\7a23e8d617c9cdbeb959dada5f1ea612\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
@@ -108,37 +112,39 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\sebas\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] C:\Users\sebas\.gradle\caches\transforms-3\ac01873b5f746ff1d8d1e5e2eae17882\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:10:9-41
 	android:roundIcon
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:11:9-54
 	android:icon
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:11:9-49
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:13:9-49
+	android:usesCleartextTraffic
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:7:9-44
 activity#com.acme.homehealthy.MainActivity
-ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:12:9-22:20
+ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:14:9-24:20
 	android:label
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:15:13-45
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:17:13-45
 	android:exported
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:14:13-36
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:16:13-36
 	android:theme
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:16:13-65
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:18:13-65
 	android:name
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:13:13-41
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:15:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:17:13-21:29
+ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
-ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:18:17-69
+ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:18:25-66
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:20:17-77
+ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:20:27-74
+		ADDED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml:22:27-74
 uses-sdk
 INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\University_Repos\home_healthy\app\src\main\AndroidManifest.xml

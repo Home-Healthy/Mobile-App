@@ -6,6 +6,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -16,19 +17,22 @@ import com.acme.homehealthy.ui.theme.DeepBlue
 import com.acme.homehealthy.ui.theme.Rose
 
 @Composable
-fun MainScreen(){
-    Box(modifier = Modifier
+fun MainScreen(routines: List<Routine>){
+    /*Box(modifier = Modifier
         .background(DeepBlue)
         .fillMaxSize())
     {
         Column() {
-
+            routinesList(routines = routines)
         }
+    }*/
+    Scaffold {
+        routinesList(routines = routines)
     }
 }
 
 
-@Composable
+/*@Composable
 fun Greetings(name: String){
     Row (
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -50,7 +54,7 @@ fun Greetings(name: String){
 
     }
 }
-
+*/
 
 @Composable
 fun routinesList(routines: List<Routine>){
@@ -73,7 +77,15 @@ fun RoutineRow(routine: Routine){
             modifier = Modifier
                 .padding(4.dp)
                 ){
+            Column {
+                Text(
+                    text =routine.name
+                )
+
+            }
         }
 
     }
 }
+
+

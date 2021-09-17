@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
-    private const val API_BASE_URL = "http://localhost:8095"
+    private const val API_BASE_URL = "https://60c255b2069afc0017f4a2ca.mockapi.io/"
 
     //Routines
     var routineInterface : RoutineInterface? = null
