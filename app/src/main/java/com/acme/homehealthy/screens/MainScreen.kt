@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
 import com.acme.homehealthy.data.models.Routine
+import com.acme.homehealthy.data.models.Training
 import com.acme.homehealthy.ui.theme.*
 
 @Composable
@@ -99,4 +100,11 @@ fun RoutinesRow(routines: Routine){
 }
 
 
+
+
+
+@Composable
+fun trainingsView(trainings: Training){
+
+}
 
