@@ -6,6 +6,7 @@ import retrofit2.http.GET
 
 
 interface RoutineInterface {
-    @GET("rutines")
+    //TODO: change routines to 'rutines' when workings with the real API
+    @GET("routines")
     fun fetchRoutines(): Call<List<Routine>>
 }
