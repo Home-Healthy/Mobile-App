@@ -7,32 +7,49 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.tooling.preview.Preview
+import com.acme.homehealthy.data.models.Routine
+import com.acme.homehealthy.data.remote.ApiClient
 import com.acme.homehealthy.ui.theme.HomeHealthyTheme
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class MainActivity : ComponentActivity() {
+
+    //variables
+    var routines by mutableStateOf(listOf<Routine>())
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        loadRoutines()
         setContent {
             HomeHealthyTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                }
+
             }
         }
     }
-}
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+    private fun loadRoutines(){
+        val routineInterface = ApiClient.buildRoutine()
+        val fetchRoutines = routineInterface?.fetchRoutines()
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    HomeHealthyTheme {
-        Greeting("Android")
+        fetchRoutines?.enqueue(object : Callback<List<Routine>>{
+            override fun onResponse(call: Call<List<Routine>>, response: Response<List<Routine>>) {
+                routines = response.body()!!
+            }
+
+            override fun onFailure(call: Call<List<Routine>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        }
+
+        )
     }
 }
+
