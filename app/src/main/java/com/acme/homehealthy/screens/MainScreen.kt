@@ -69,7 +69,7 @@ fun Greetings(name: String) {
         ) {
             Text(
                 text = "Good day, $name",
-                style = MaterialTheme.typography.h2,
+                style = MaterialTheme.typography.h4,
                 color = textNight
             )
 
