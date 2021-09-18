@@ -39,13 +39,17 @@ fun MainScreen(_routines: List<Routine>, _trainings: List<Training>) {
             RoutinesList(routines = _routines)
 
             TrainingList(trainings = _trainings)
+            Spacer(modifier = Modifier.height(26.dp))
 
 
         }
         BottomNav(
             items = listOf(
                 BotonNavContent("Training", R.drawable.dumbbellfortraining_89135),
-                BotonNavContent("Nutrition", R.drawable.bodybuilding_nutrition_protein_fitness_diet_icon_149055),
+                BotonNavContent(
+                    "Nutrition",
+                    R.drawable.bodybuilding_nutrition_protein_fitness_diet_icon_149055
+                ),
                 BotonNavContent("Profile", R.drawable.profile_121261)
             ),
             modifier = Modifier.align(Alignment.BottomEnd)
@@ -72,9 +76,7 @@ fun Greetings(name: String) {
                 style = MaterialTheme.typography.h4,
                 color = textNight
             )
-
         }
-
     }
 }
 
@@ -223,6 +225,8 @@ fun BottomNav(
             .fillMaxWidth()
             .background(navBar)
             .padding(15.dp)
+            .clip(RoundedCornerShape(topStart = 15.dp, topEnd = 15.dp))
+
     ) {
         items.forEachIndexed { index, item ->
             BottomNavItem(
@@ -258,7 +262,8 @@ fun BottomNavItem(
                 painter = painterResource(id = item.iconId),
                 contentDescription = item.tittle,
                 tint = if (isSelected) Rose else Color.White,
-                modifier = Modifier.size(20.dp)
+                modifier = Modifier
+                    .size(20.dp)
             )
         }
         Text(

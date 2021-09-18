@@ -41,11 +41,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun loadRoutines(){
+    private fun loadRoutines() {
         val routineInterface = ApiClient.buildRoutine()
         val fetchRoutines = routineInterface?.fetchRoutines()
 
-        fetchRoutines?.enqueue(object : Callback<List<Routine>>{
+        fetchRoutines?.enqueue(object : Callback<List<Routine>> {
             override fun onResponse(call: Call<List<Routine>>, response: Response<List<Routine>>) {
                 routines = response.body()!!
             }
@@ -56,11 +56,11 @@ class MainActivity : ComponentActivity() {
         })
     }
 
-    private fun loadTrainings(){
+    private fun loadTrainings() {
         val trainingInterface = ApiClient.buildTraining()
         val fetchTraining = trainingInterface?.fetchTrainings()
 
-        fetchTraining?.enqueue(object : Callback<List<Training>>{
+        fetchTraining?.enqueue(object : Callback<List<Training>> {
             override fun onResponse(
                 call: Call<List<Training>>,
                 response: Response<List<Training>>

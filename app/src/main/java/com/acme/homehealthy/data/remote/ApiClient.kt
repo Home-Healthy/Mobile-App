@@ -9,9 +9,9 @@ object ApiClient {
     private const val API_BASE_URL = "https://60c255b2069afc0017f4a2ca.mockapi.io/"
 
     //Routines
-    var routineInterface : RoutineInterface? = null
+    var routineInterface: RoutineInterface? = null
 
-    fun buildRoutine() : RoutineInterface? {
+    fun buildRoutine(): RoutineInterface? {
         val builder: Retrofit.Builder = Retrofit.Builder()
             .baseUrl(API_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -21,9 +21,9 @@ object ApiClient {
     }
 
     //Trainings
-    var trainingInterface : TrainingInterface? = null
+    var trainingInterface: TrainingInterface? = null
 
-    fun buildTraining(): TrainingInterface?{
+    fun buildTraining(): TrainingInterface? {
         val builder: Retrofit.Builder = Retrofit.Builder()
             .baseUrl(API_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
