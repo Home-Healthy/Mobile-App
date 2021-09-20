@@ -14,6 +14,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.toUpperCase
@@ -24,6 +27,8 @@ import com.acme.homehealthy.data.models.Routine
 import com.acme.homehealthy.data.models.Training
 import com.acme.homehealthy.resources.BotonNavContent
 import com.acme.homehealthy.ui.theme.*
+import com.skydoves.landscapist.CircularReveal
+import com.skydoves.landscapist.glide.GlideImage
 
 
 @Composable
@@ -158,7 +163,7 @@ fun trainingsView(trainings: Training) {
                 .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
+            /*Image(
                 painter = rememberImagePainter(
                     data = imgUrl
                 ),
@@ -166,6 +171,13 @@ fun trainingsView(trainings: Training) {
                 modifier = Modifier
                     .size(200.dp, 120.dp)
                     .clip(RoundedCornerShape(25.dp))
+            )*/
+            GlideImage(
+                imageModel = imgUrl,
+                contentScale = ContentScale.Crop,
+                circularReveal = CircularReveal(duration = 1200),
+                modifier = Modifier
+                    .size(200.dp, 120.dp)
             )
 
             Spacer(modifier = Modifier.height(16.dp))
