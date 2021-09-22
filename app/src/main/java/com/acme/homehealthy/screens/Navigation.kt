@@ -6,6 +6,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.acme.homehealthy.data.models.Routine
 import com.acme.homehealthy.data.models.Training
+import com.acme.homehealthy.screens.composableScreens.dietScreen
+import com.acme.homehealthy.screens.composableScreens.profileScreen
 
 @Composable
 fun Navigation(_routines: List<Routine>, _trainings: List<Training>){
@@ -13,8 +15,15 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>){
     NavHost(navController = navController, startDestination = Screen.MainScreen.route){
         composable(route = Screen.MainScreen.route){
             MainScreen(_routines , _trainings , navController)
+
         }
 
-        composable(route = Screen.DietScreen.route){}
+        composable(route = Screen.DietScreen.route){
+            dietScreen(navController)
+        }
+
+        composable(route = Screen.ProfileScreen.route){
+            profileScreen()
+        }
     }
 }

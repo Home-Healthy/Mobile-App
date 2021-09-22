@@ -47,7 +47,6 @@ fun MainScreen(_routines: List<Routine>, _trainings: List<Training>, navControll
             TrainingList(trainings = _trainings)
             Spacer(modifier = Modifier.height(26.dp))
 
-
         }
         BottomNav(
             items = listOf(
@@ -59,11 +58,15 @@ fun MainScreen(_routines: List<Routine>, _trainings: List<Training>, navControll
                 BotonNavContent("Profile", R.drawable.profile_121261)
             ),
             modifier = Modifier.align(Alignment.BottomEnd),
-            navController = navController
+            navController = navController,
+            initialSelectedIndex = 0
         )
     }
-
 }
+
+
+
+
 
 
 @Composable
@@ -268,7 +271,12 @@ fun BottomNavItem(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier.clickable {
-            navController.navigate(Screen.DietScreen.route)
+            if(item.tittle=="Training"){
+            navController.navigate(Screen.MainScreen.route)}
+            else if (item.tittle == "Nutrition"){
+            navController.navigate(Screen.DietScreen.route)}
+            else if(item.tittle == "Profile"){
+                navController.navigate(Screen.ProfileScreen.route) }
         }
     ) {
         Box(
