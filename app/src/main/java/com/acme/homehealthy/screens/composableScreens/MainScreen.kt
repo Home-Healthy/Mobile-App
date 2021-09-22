@@ -21,6 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
 import com.acme.homehealthy.R
 import com.acme.homehealthy.data.models.Routine
@@ -32,7 +33,7 @@ import com.skydoves.landscapist.glide.GlideImage
 
 
 @Composable
-fun MainScreen(_routines: List<Routine>, _trainings: List<Training>) {
+fun MainScreen(_routines: List<Routine>, _trainings: List<Training>, navController: NavController) {
     Box(
         modifier = Modifier
             .background(DeepBlue)
@@ -57,7 +58,8 @@ fun MainScreen(_routines: List<Routine>, _trainings: List<Training>) {
                 ),
                 BotonNavContent("Profile", R.drawable.profile_121261)
             ),
-            modifier = Modifier.align(Alignment.BottomEnd)
+            modifier = Modifier.align(Alignment.BottomEnd),
+            navController = navController
         )
     }
 
@@ -225,7 +227,8 @@ fun TrainingList(trainings: List<Training>) {
 fun BottomNav(
     items: List<BotonNavContent>,
     modifier: Modifier = Modifier,
-    initialSelectedIndex: Int = 0
+    initialSelectedIndex: Int = 0,
+    navController: NavController
 ) {
     var selectedItemIndex by remember {
         mutableStateOf(initialSelectedIndex)
@@ -243,9 +246,12 @@ fun BottomNav(
         items.forEachIndexed { index, item ->
             BottomNavItem(
                 item = item,
-                isSelected = index == selectedItemIndex
+                isSelected = index == selectedItemIndex,
+                navController
+
             ) {
                 selectedItemIndex = index
+
             }
         }
     }
@@ -255,13 +261,14 @@ fun BottomNav(
 fun BottomNavItem(
     item: BotonNavContent,
     isSelected: Boolean = false,
-    onItemClick: () -> Unit
+    navController: NavController,
+    onItemClick: () -> Unit,
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier.clickable {
-            onItemClick()
+            navController.navigate(Screen.DietScreen.route)
         }
     ) {
         Box(
@@ -276,6 +283,8 @@ fun BottomNavItem(
                 tint = if (isSelected) Rose else Color.White,
                 modifier = Modifier
                     .size(20.dp)
+
+
             )
         }
         Text(

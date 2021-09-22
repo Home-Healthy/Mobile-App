@@ -16,6 +16,7 @@ import com.acme.homehealthy.data.models.Routine
 import com.acme.homehealthy.data.models.Training
 import com.acme.homehealthy.data.remote.ApiClient
 import com.acme.homehealthy.screens.MainScreen
+import com.acme.homehealthy.screens.Navigation
 import com.acme.homehealthy.screens.trainingsView
 import com.acme.homehealthy.ui.theme.HomeHealthyTheme
 import retrofit2.Call
@@ -36,7 +37,7 @@ class MainActivity : ComponentActivity() {
         loadTrainings()
         setContent {
             HomeHealthyTheme {
-                MainScreen(routines, trainings)
+                Navigation(routines, trainings)
             }
         }
     }
