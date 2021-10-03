@@ -19,3 +19,6 @@ val InerGreen = Color(0xFFADE46D)
 val Gray = Color(0xFF918A8A)
 val GrayWhite = Color(0xFFD5D0D0)
 val navBar = Color(0xFF0E111F)
+
+val DeepBlack = Color(0xFF0C0C0C)
+val TransparentBlack = Color(0xF2292B2C)

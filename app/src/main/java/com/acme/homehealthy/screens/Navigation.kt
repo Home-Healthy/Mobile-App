@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.acme.homehealthy.data.models.Routine
 import com.acme.homehealthy.data.models.Training
+import com.acme.homehealthy.screens.composableScreens.MainAutenticationBox
 import com.acme.homehealthy.screens.composableScreens.dietScreen
 import com.acme.homehealthy.screens.composableScreens.profileScreen
 
@@ -24,6 +25,10 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>){
 
         composable(route = Screen.ProfileScreen.route){
             profileScreen()
+        }
+
+        composable(route = Screen.AuthScreen.route){
+            MainAutenticationBox()
         }
     }
 }

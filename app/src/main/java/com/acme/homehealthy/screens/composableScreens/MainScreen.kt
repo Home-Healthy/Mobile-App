@@ -36,7 +36,7 @@ import com.skydoves.landscapist.glide.GlideImage
 fun MainScreen(_routines: List<Routine>, _trainings: List<Training>, navController: NavController) {
     Box(
         modifier = Modifier
-            .background(DeepBlue)
+            .background(DeepBlack)
             .fillMaxSize()
     )
     {
@@ -84,7 +84,7 @@ fun Greetings(name: String) {
             Text(
                 text = "Good day, $name",
                 style = MaterialTheme.typography.h4,
-                color = textNight
+                color = Color.White
             )
         }
     }
@@ -110,19 +110,20 @@ fun RoutinesRow(routines: Routine) {
         modifier = Modifier
             .padding(15.dp)
             .clip(RoundedCornerShape(15.dp))
-            .background(Rose)
+            .background(TransparentBlack)
             .padding(horizontal = 15.dp, vertical = 20.dp)
             .fillMaxWidth()
     ) {
         Column() {
             Text(
                 text = routines.name,
-                style = MaterialTheme.typography.h2
+                style = MaterialTheme.typography.h2,
+                color = Color.LightGray
             )
             Text(
                 text = routines.level,
                 style = MaterialTheme.typography.body1,
-                color = Gray
+                color = Color.White
             )
         }
 
@@ -160,7 +161,7 @@ fun trainingsView(trainings: Training) {
                 .fillMaxWidth()
                 .height(100.dp)
                 .clip(RoundedCornerShape(12.dp))
-                .background(cardNight)
+                .background(TransparentBlack)
         )
 
         Column(
@@ -190,7 +191,7 @@ fun trainingsView(trainings: Training) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(cardNight)
+                    .background(TransparentBlack)
                     .padding(bottom = 24.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -276,7 +277,7 @@ fun BottomNavItem(
             else if (item.tittle == "Nutrition"){
             navController.navigate(Screen.DietScreen.route)}
             else if(item.tittle == "Profile"){
-                navController.navigate(Screen.ProfileScreen.route) }
+                navController.navigate(Screen.AuthScreen.route) }
         }
     ) {
         Box(
