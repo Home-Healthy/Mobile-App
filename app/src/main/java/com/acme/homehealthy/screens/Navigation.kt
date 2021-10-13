@@ -1,15 +1,20 @@
 package com.acme.homehealthy.screens
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.acme.homehealthy.data.models.Routine
 import com.acme.homehealthy.data.models.Training
 import com.acme.homehealthy.screens.composableScreens.MainAutenticationBox
+import com.acme.homehealthy.screens.composableScreens.MainDietDetailScreen
 import com.acme.homehealthy.screens.composableScreens.dietScreen
 import com.acme.homehealthy.screens.composableScreens.profileScreen
 
+@ExperimentalFoundationApi
 @Composable
 fun Navigation(_routines: List<Routine>, _trainings: List<Training>){
     val navController = rememberNavController()
@@ -29,6 +34,16 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>){
 
         composable(route = Screen.AuthScreen.route){
             MainAutenticationBox()
+        }
+
+        composable(route = Screen.DietDetailScreen.route + "/{name}", arguments = listOf(
+            navArgument("name") {
+                type = NavType.StringType
+                defaultValue = "Monday"
+                nullable = false
+            }
+        )) { entry ->
+            MainDietDetailScreen(dayOfWekk = entry.arguments?.getString("name"))
         }
     }
 }

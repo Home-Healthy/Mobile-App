@@ -22,3 +22,8 @@ val navBar = Color(0xFF0E111F)
 
 val DeepBlack = Color(0xFF0C0C0C)
 val TransparentBlack = Color(0xF2292B2C)
+
+val ProteinBar = Color(0xFF0987EB)
+val CarbsBar = Color(0xFF036B07)
+val FatBar = Color(0xFF7A0311)
+
