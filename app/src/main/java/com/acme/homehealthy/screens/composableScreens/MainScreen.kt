@@ -34,6 +34,7 @@ import com.skydoves.landscapist.glide.GlideImage
 
 @Composable
 fun MainScreen(_routines: List<Routine>, _trainings: List<Training>, navController: NavController) {
+
     Box(
         modifier = Modifier
             .background(DeepBlack)
@@ -63,9 +64,6 @@ fun MainScreen(_routines: List<Routine>, _trainings: List<Training>, navControll
         )
     }
 }
-
-
-
 
 
 
@@ -184,6 +182,7 @@ fun trainingsView(trainings: Training) {
                 circularReveal = CircularReveal(duration = 1200),
                 modifier = Modifier
                     .size(200.dp, 120.dp)
+                    .clip(RoundedCornerShape(20.dp))
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -277,7 +276,7 @@ fun BottomNavItem(
             else if (item.tittle == "Nutrition"){
             navController.navigate(Screen.DietScreen.route)}
             else if(item.tittle == "Profile"){
-                navController.navigate(Screen.AuthScreen.route) }
+                navController.navigate(Screen.ProfileScreen.route) }
         }
     ) {
         Box(

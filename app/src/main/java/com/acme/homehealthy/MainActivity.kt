@@ -4,25 +4,20 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.tooling.preview.Preview
+import com.acme.homehealthy.data.models.Diet
 import com.acme.homehealthy.data.models.Routine
 import com.acme.homehealthy.data.models.Training
+import com.acme.homehealthy.data.models.User
 import com.acme.homehealthy.data.remote.ApiClient
-import com.acme.homehealthy.screens.MainScreen
 import com.acme.homehealthy.screens.Navigation
-import com.acme.homehealthy.screens.trainingsView
 import com.acme.homehealthy.ui.theme.HomeHealthyTheme
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.*
 
 
 class MainActivity : ComponentActivity() {
@@ -30,14 +25,20 @@ class MainActivity : ComponentActivity() {
     //variables
     var routines by mutableStateOf(listOf<Routine>())
     var trainings by mutableStateOf(listOf<Training>())
+    var diets by mutableStateOf(listOf<Diet>())
+    var users by mutableStateOf(listOf<User>())
+    var user: User = User(5,"Sebastian","Toulier","sebas@gmail.com","up mm","Pro",5)
 
+    @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loadRoutines()
         loadTrainings()
+        //loadUsers()
+        loadDiets()
         setContent {
             HomeHealthyTheme {
-                Navigation(routines, trainings)
+                Navigation(routines, trainings, diets, user)
             }
         }
     }
@@ -73,6 +74,36 @@ class MainActivity : ComponentActivity() {
                 Log.d("MainActivity", t.toString())
             }
 
+        })
+    }
+
+    private fun loadDiets() {
+        val dietInterface = ApiClient.buildDiets()
+        val fetchDiets = dietInterface?.fetchDiet()
+
+        fetchDiets?.enqueue(object : Callback<List<Diet>> {
+            override fun onResponse(call: Call<List<Diet>>, response: Response<List<Diet>>) {
+                diets = response.body()!!
+            }
+
+            override fun onFailure(call: Call<List<Diet>>, t: Throwable) {
+                Log.d("MainActivity", t.toString())
+            }
+        })
+    }
+
+    private fun loadUsers(){
+        val usersINterface = ApiClient.buildUsers()
+        val fetchUsers = usersINterface?.fetchUsers()
+
+        fetchUsers?.enqueue(object : Callback<List<User>>{
+            override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
+                users = response.body()!!
+            }
+
+            override fun onFailure(call: Call<List<User>>, t: Throwable) {
+                Log.d("MainActivity", t.toString())
+            }
         })
     }
 }
