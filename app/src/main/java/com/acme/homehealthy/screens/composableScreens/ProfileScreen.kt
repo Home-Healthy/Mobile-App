@@ -13,27 +13,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.acme.homehealthy.ui.theme.DeepBlack
-import com.acme.homehealthy.ui.theme.InerGreen
-import com.acme.homehealthy.ui.theme.Rose
-import com.acme.homehealthy.ui.theme.TransparentBlack
+import com.acme.homehealthy.data.models.User
+import com.acme.homehealthy.ui.theme.*
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.glide.GlideImage
 
 @Composable
-fun profileScreen() {
+fun profileScreen(user: User) {
     Box(
         modifier = Modifier
             .background(DeepBlack)
             .fillMaxSize()
     ) {
-        profileDataSection()
+        profileDataSection(user)
     }
 }
 
 
 @Composable
-fun profileDataSection() {
+fun profileDataSection(user: User) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -85,20 +83,89 @@ fun profileDataSection() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "asdsdsaddad",
+                    text = user.name,
                     style = MaterialTheme.typography.h3,
                     textAlign = TextAlign.Center,
                     color = Color.White
                 )
 
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(20.dp))
 
-                Text(
-                    text = "asdsdsaddad",
-                    style = MaterialTheme.typography.caption,
-                    textAlign = TextAlign.Center,
-                    color = Color.White
-                )
+
+                Box(modifier = Modifier.background(Color.White)) {
+                    Box(modifier = Modifier.background(Color.Black)) {
+                        Row() {
+                            Text(
+                                text = "Level of experience",
+                                style = MaterialTheme.typography.caption,
+                                textAlign = TextAlign.Center,
+                                color = Color.White
+                            )
+                            Spacer(modifier = Modifier.width(35.dp))
+
+                            Text(
+                                text = user.experience,
+                                style = MaterialTheme.typography.caption,
+                                textAlign = TextAlign.Center,
+                                color = Color.White
+                            )
+                        }
+
+                    }
+                }
+                Spacer(modifier = Modifier.height(20.dp))
+
+
+                Box(modifier = Modifier.background(Color.White)) {
+                    Box(modifier = Modifier.background(Color.Black)) {
+                        Row() {
+                            Text(
+                                text = "Number of trainings per week",
+                                style = MaterialTheme.typography.caption,
+                                textAlign = TextAlign.Center,
+                                color = Color.White
+                            )
+                            Spacer(modifier = Modifier.width(85.dp))
+
+                            Text(
+                                text = user.diasEntrenamiento.toString(),
+                                style = MaterialTheme.typography.caption,
+                                textAlign = TextAlign.Center,
+                                color = Color.White
+                            )
+                        }
+
+                    }
+                }
+                Spacer(modifier = Modifier.height(20.dp))
+
+
+                Box(
+                    modifier = Modifier
+                        .background(Color.Black)
+                        .padding(3.dp)
+                        .clip(RoundedCornerShape(15.dp))
+                ) {
+                    Box(modifier = Modifier.background(DeepBlue)) {
+                        Row() {
+                            Text(
+                                text = "GOAL",
+                                style = MaterialTheme.typography.caption,
+                                textAlign = TextAlign.Center,
+                                color = Color.White
+                            )
+                            Spacer(modifier = Modifier.width(85.dp))
+
+                            Text(
+                                text = user.objective,
+                                style = MaterialTheme.typography.caption,
+                                textAlign = TextAlign.Center,
+                                color = Color.White
+                            )
+                        }
+
+                    }
+                }
 
             }
         }
