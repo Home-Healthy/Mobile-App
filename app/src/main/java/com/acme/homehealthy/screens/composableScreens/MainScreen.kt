@@ -66,9 +66,6 @@ fun MainScreen(_routines: List<Routine>, _trainings: List<Training>, navControll
 
 
 
-
-
-
 @Composable
 fun Greetings(name: String) {
     Row(
@@ -184,6 +181,7 @@ fun trainingsView(trainings: Training) {
                 circularReveal = CircularReveal(duration = 1200),
                 modifier = Modifier
                     .size(200.dp, 120.dp)
+                    .clip(RoundedCornerShape(20.dp))
             )
 
             Spacer(modifier = Modifier.height(16.dp))
