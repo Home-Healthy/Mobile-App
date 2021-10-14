@@ -277,7 +277,7 @@ fun BottomNavItem(
             else if (item.tittle == "Nutrition"){
             navController.navigate(Screen.DietScreen.route)}
             else if(item.tittle == "Profile"){
-                navController.navigate(Screen.AuthScreen.route) }
+                navController.navigate(Screen.ProfileScreen.route) }
         }
     ) {
         Box(

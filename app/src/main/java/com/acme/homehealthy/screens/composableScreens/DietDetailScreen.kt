@@ -10,11 +10,13 @@ import androidx.compose.material.Divider
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.acme.homehealthy.R
@@ -49,7 +51,7 @@ fun dietList(diets: List<Diet>, day: String, navController: NavController) {
 fun fietRow(diet: Diet, day: String, navController: NavController) {
     Box(
         modifier = Modifier
-            .background(Gray)
+            .background(Color.Black)
             .padding(20.dp)
             .clip(RoundedCornerShape(25.dp))
             .clipToBounds()
@@ -73,18 +75,26 @@ fun fietRow(diet: Diet, day: String, navController: NavController) {
                 .fillMaxSize()
         ) {
             Column {
-                Row() {
+                Row(
+
+
+                ) {
                     GlideImage(
                         imageModel = diet.breakfastImg, modifier = Modifier
-                            .size(200.dp, 120.dp)
+                            .size(200.dp, 220.dp)
                     )
-                    Text(text = diet.breackfast)
+                    Text(
+                        text = diet.breackfast,
+                        color = Gray,
+                        fontStyle = FontStyle(5),
+                        modifier = Modifier.padding(start = 15.dp, end =15.dp, top = 35.dp, bottom = 5.dp)
+                    )
                 }
-                Divider(modifier = Modifier.fillMaxWidth())
+                Spacer(modifier = Modifier.height(25.dp))
                 Row() {
                     GlideImage(
                         imageModel = diet.lunchImg, modifier = Modifier
-                            .size(200.dp, 120.dp)
+                            .size(200.dp, 220.dp)
                     )
                     Text(text = diet.lunch)
                 }
@@ -92,7 +102,7 @@ fun fietRow(diet: Diet, day: String, navController: NavController) {
                 Row() {
                     GlideImage(
                         imageModel = diet.dinnerImg, modifier = Modifier
-                            .size(200.dp, 120.dp)
+                            .size(200.dp, 220.dp)
                     )
                     Text(text = diet.dinner)
                 }

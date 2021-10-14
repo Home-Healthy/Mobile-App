@@ -2552,6 +2552,7 @@ int string selected 0x7f0e008b
 int string status_bar_notification_info_overflow 0x7f0e008c
 int string tab 0x7f0e008d
 int string template_percent 0x7f0e008e
+int string webClient_id 0x7f0e008f
 int style AlertDialog_AppCompat 0x7f0f0000
 int style AlertDialog_AppCompat_Light 0x7f0f0001
 int style AndroidThemeColorAccentYellow 0x7f0f0002

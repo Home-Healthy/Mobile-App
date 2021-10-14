@@ -4,7 +4,7 @@
             "outputFile": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/home/sebastian/.gradle/caches/transforms-3/e6d4d1fccafffc9ba787be4c8d857ab1/transformed/jetified-play-services-auth-19.0.0/res/values-watch-v20/values.xml",
+                    "source": "/home/sebastian/.gradle/caches/transforms-3/0913d410a51933c7d115c62fa86178bc/transformed/jetified-play-services-auth-19.2.0/res/values-watch-v20/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

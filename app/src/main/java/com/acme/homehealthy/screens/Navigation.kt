@@ -34,7 +34,7 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: Lis
         }
 
         composable(route = Screen.AuthScreen.route){
-            MainAutenticationBox()
+            MainAutenticationBox(navController)
         }
 
         composable(route = Screen.DietDetailScreen.route + "/{name}", arguments = listOf(
