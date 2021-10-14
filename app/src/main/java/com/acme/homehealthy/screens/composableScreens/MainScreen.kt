@@ -34,6 +34,7 @@ import com.skydoves.landscapist.glide.GlideImage
 
 @Composable
 fun MainScreen(_routines: List<Routine>, _trainings: List<Training>, navController: NavController) {
+
     Box(
         modifier = Modifier
             .background(DeepBlack)

@@ -13,19 +13,36 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.acme.homehealthy.R
 import com.acme.homehealthy.data.models.User
+import com.acme.homehealthy.resources.BotonNavContent
+import com.acme.homehealthy.screens.BottomNav
 import com.acme.homehealthy.ui.theme.*
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.glide.GlideImage
 
 @Composable
-fun profileScreen(user: User) {
+fun profileScreen(user: User, navController: NavController) {
     Box(
         modifier = Modifier
             .background(DeepBlack)
             .fillMaxSize()
     ) {
         profileDataSection(user)
+        BottomNav(
+            items = listOf(
+                BotonNavContent("Training", R.drawable.dumbbellfortraining_89135),
+                BotonNavContent(
+                    "Nutrition",
+                    R.drawable.bodybuilding_nutrition_protein_fitness_diet_icon_149055
+                ),
+                BotonNavContent("Profile", R.drawable.profile_121261)
+            ),
+            modifier = Modifier.align(Alignment.BottomEnd),
+            navController = navController,
+            initialSelectedIndex = 2
+        )
     }
 }
 
@@ -67,7 +84,7 @@ fun profileDataSection(user: User) {
             GlideImage(
                 imageModel = "https://800noticias.com/cms/wp-content/uploads/2019/08/Dwayne-Johnson.jpg",
                 contentScale = ContentScale.Crop,
-                circularReveal = CircularReveal(duration = 1200),
+                circularReveal = CircularReveal(duration = 5000),
                 modifier = Modifier
                     .size(300.dp, 320.dp)
                     .clip(RoundedCornerShape(25.dp))
@@ -92,8 +109,13 @@ fun profileDataSection(user: User) {
                 Spacer(modifier = Modifier.height(20.dp))
 
 
-                Box(modifier = Modifier.background(Color.White)) {
-                    Box(modifier = Modifier.background(Color.Black)) {
+                Box(
+                    modifier = Modifier
+                        .background(Color.Black)
+                        .padding(3.dp)
+                        .clip(RoundedCornerShape(15.dp))
+                ) {
+                    Box(modifier = Modifier.background(DeepBlue)) {
                         Row() {
                             Text(
                                 text = "Level of experience",
@@ -116,8 +138,13 @@ fun profileDataSection(user: User) {
                 Spacer(modifier = Modifier.height(20.dp))
 
 
-                Box(modifier = Modifier.background(Color.White)) {
-                    Box(modifier = Modifier.background(Color.Black)) {
+                Box(
+                    modifier = Modifier
+                        .background(Color.Black)
+                        .padding(3.dp)
+                        .clip(RoundedCornerShape(15.dp))
+                ) {
+                    Box(modifier = Modifier.background(DeepBlue)) {
                         Row() {
                             Text(
                                 text = "Number of trainings per week",
@@ -125,7 +152,7 @@ fun profileDataSection(user: User) {
                                 textAlign = TextAlign.Center,
                                 color = Color.White
                             )
-                            Spacer(modifier = Modifier.width(85.dp))
+                            Spacer(modifier = Modifier.width(60.dp))
 
                             Text(
                                 text = user.diasEntrenamiento.toString(),
@@ -154,7 +181,7 @@ fun profileDataSection(user: User) {
                                 textAlign = TextAlign.Center,
                                 color = Color.White
                             )
-                            Spacer(modifier = Modifier.width(85.dp))
+                            Spacer(modifier = Modifier.width(100.dp))
 
                             Text(
                                 text = user.objective,

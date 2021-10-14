@@ -31,7 +31,7 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: Lis
         }
 
         composable(route = Screen.ProfileScreen.route){
-            profileScreen(user)
+            profileScreen(user, navController)
         }
 
         composable(route = Screen.AuthScreen.route){
