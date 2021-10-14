@@ -1,19 +1,59 @@
 [
     {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable_dumbbellfortraining_89135.png.flat",
         "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/drawable/dumbbellfortraining_89135.png"
     },
     {
         "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable_profile_121261.png.flat",
         "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/drawable/profile_121261.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable-v24_jjjjjj.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/drawable-v24/jjjjjj.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable_bodybuilding_nutrition_protein_fitness_diet_icon_149055.png.flat",
@@ -24,28 +64,12 @@
         "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
-    },
-    {
         "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",
         "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/drawable/ic_launcher_background.xml"
-    },
-    {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
         "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -68,27 +92,11 @@
         "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/drawable/a.png"
     },
     {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
-    },
-    {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
-    },
-    {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable_backicon.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/drawable/backicon.png"
     },
     {
         "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
         "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
-    },
-    {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     }
 ]

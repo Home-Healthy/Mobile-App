@@ -39,6 +39,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         loadRoutines()
         loadTrainings()
+        loadDiets()
         setContent {
             HomeHealthyTheme {
                 Navigation(routines, trainings, diets)

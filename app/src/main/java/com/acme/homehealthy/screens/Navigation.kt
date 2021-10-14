@@ -44,7 +44,7 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: Lis
                 nullable = false
             }
         )) { entry ->
-            MainDietDetailScreen(dayOfWekk = entry.arguments?.getString("name"), _diets)
+            MainDietDetailScreen(dayOfWekk = entry.arguments?.getString("name"), _diets, navController)
         }
     }
 }
