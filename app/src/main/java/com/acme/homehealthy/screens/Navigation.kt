@@ -11,16 +11,13 @@ import com.acme.homehealthy.data.models.Diet
 import com.acme.homehealthy.data.models.Routine
 import com.acme.homehealthy.data.models.Training
 import com.acme.homehealthy.data.models.User
-import com.acme.homehealthy.screens.composableScreens.MainAutenticationBox
-import com.acme.homehealthy.screens.composableScreens.MainDietDetailScreen
-import com.acme.homehealthy.screens.composableScreens.dietScreen
-import com.acme.homehealthy.screens.composableScreens.profileScreen
+import com.acme.homehealthy.screens.composableScreens.*
 
 @ExperimentalFoundationApi
 @Composable
 fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: List<Diet>, user: User){
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Screen.MainScreen.route){
+    NavHost(navController = navController, startDestination = Screen.SplashScreen.route){
         composable(route = Screen.MainScreen.route){
             MainScreen(_routines , _trainings , navController)
 
@@ -36,6 +33,9 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: Lis
 
         composable(route = Screen.AuthScreen.route){
             MainAutenticationBox(navController)
+        }
+        composable(route = Screen.SplashScreen.route){
+            splashScreen(navController)
         }
 
         composable(route = Screen.DietDetailScreen.route + "/{name}", arguments = listOf(

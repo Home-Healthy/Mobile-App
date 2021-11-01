@@ -68,6 +68,10 @@
         "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable_sscfreen.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/drawable/sscfreen.png"
+    },
+    {
         "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",
         "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/drawable/ic_launcher_background.xml"
     },
