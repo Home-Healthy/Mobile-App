@@ -2,6 +2,9 @@
 
 ## Mobile application for those seeking to increase and/or improve their physical fitness.
 
+### MAD Score 
+
+
 ### Screenshots
 
 
