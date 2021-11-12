@@ -64,12 +64,12 @@
         "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
         "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable_sscfreen.png.flat",
         "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/drawable/sscfreen.png"
+    },
+    {
+        "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/sebastian/Escritorio/Mobile-App/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
         "merged": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",

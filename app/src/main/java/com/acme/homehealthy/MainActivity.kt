@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -15,20 +16,29 @@ import com.acme.homehealthy.data.models.User
 import com.acme.homehealthy.data.remote.ApiClient
 import com.acme.homehealthy.screens.Navigation
 import com.acme.homehealthy.ui.theme.HomeHealthyTheme
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
+import android.Manifest
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.Lifecycle
 
 class MainActivity : ComponentActivity() {
+
 
     //variables
     var routines by mutableStateOf(listOf<Routine>())
     var trainings by mutableStateOf(listOf<Training>())
     var diets by mutableStateOf(listOf<Diet>())
     var users by mutableStateOf(listOf<User>())
-    var user: User = User(5,"Sebastian","Toulier","sebas@gmail.com","up mm","Pro",5)
+    var user: User = User(5, "Sebastian", "Toulier", "sebas@gmail.com", "up mm", "Pro", 5)
 
+    @ExperimentalPermissionsApi
+    @ExperimentalMaterialApi
     @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +48,28 @@ class MainActivity : ComponentActivity() {
         loadDiets()
         setContent {
             HomeHealthyTheme {
+                val permissionsState = rememberMultiplePermissionsState(
+                    permissions = listOf(
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.CAMERA,
+                    )
+                )
+                val lifecycleOwner = LocalLifecycleOwner.current
+                DisposableEffect(
+                    key1 = lifecycleOwner,
+                    effect = {
+                        val observer = LifecycleEventObserver { _, event ->
+                            if(event == Lifecycle.Event.ON_START) {
+                                permissionsState.launchMultiplePermissionRequest()
+                            }
+                        }
+                        lifecycleOwner.lifecycle.addObserver(observer)
+
+                        onDispose {
+                            lifecycleOwner.lifecycle.removeObserver(observer)
+                        }
+                    }
+                )
                 Navigation(routines, trainings, diets, user)
             }
         }
@@ -92,11 +124,11 @@ class MainActivity : ComponentActivity() {
         })
     }
 
-    private fun loadUsers(){
+    private fun loadUsers() {
         val usersINterface = ApiClient.buildUsers()
         val fetchUsers = usersINterface?.fetchUsers()
 
-        fetchUsers?.enqueue(object : Callback<List<User>>{
+        fetchUsers?.enqueue(object : Callback<List<User>> {
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
                 users = response.body()!!
             }
@@ -106,5 +138,7 @@ class MainActivity : ComponentActivity() {
             }
         })
     }
+
+
 }
 

@@ -8,11 +8,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.acme.homehealthy.data.models.Diet
-import com.acme.homehealthy.data.models.Routine
-import com.acme.homehealthy.data.models.Training
-import com.acme.homehealthy.data.models.User
+import com.acme.homehealthy.data.models.*
 import com.acme.homehealthy.screens.composableScreens.*
+import com.acme.homehealthy.utils.presentation.AuthScreen
 import com.acme.homehealthy.utils.presentation.GoogleSignInButtonUi
 
 @ExperimentalMaterialApi
@@ -20,7 +18,7 @@ import com.acme.homehealthy.utils.presentation.GoogleSignInButtonUi
 @Composable
 fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: List<Diet>, user: User){
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Screen.SplashScreen.route){
+    NavHost(navController = navController, startDestination = Screen.AuthScreen.route){
         composable(route = Screen.MainScreen.route){
             MainScreen(_routines , _trainings , navController)
 
@@ -36,13 +34,15 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: Lis
 
         composable(route = Screen.AuthScreen.route){
             //MainAutenticationBox(navController)
-            GoogleSignInButtonUi() {
+            /*GoogleSignInButtonUi() {
                 navController.navigate(Screen.MainScreen.route)
-            }
+            }*/
+            AuthScreen(authViewModel = AuthVIewModel(), _routines = _routines, _trainings =_trainings , navController = navController)
         }
         composable(route = Screen.SplashScreen.route){
             splashScreen(navController)
         }
+        
 
         composable(route = Screen.DietDetailScreen.route + "/{name}", arguments = listOf(
             navArgument("name") {

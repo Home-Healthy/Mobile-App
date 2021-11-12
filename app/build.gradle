@@ -94,6 +94,16 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.0")
 
+    //for status bar
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.18.0"
+
+    //permisions
+    implementation "com.google.accompanist:accompanist-permissions:0.21.1-beta"
+
+    //cm
+    implementation 'androidx.activity:activity-ktx:1.4.0'
+
+
 
 
     testImplementation 'junit:junit:4.13.2'
