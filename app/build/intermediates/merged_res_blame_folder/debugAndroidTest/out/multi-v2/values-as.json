@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-as/values-as.xml",
+            "map": [
+                {
+                    "source": "/home/sebastian/.gradle/caches/transforms-3/91f5178fa2df891732b088bcd03ce40f/transformed/core-1.6.0/res/values-as/values-as.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "12",
+                        "startColumns": "4",
+                        "startOffsets": "979",
+                        "endColumns": "100",
+                        "endOffsets": "1075"
+                    }
+                },
+                {
+                    "source": "/home/sebastian/.gradle/caches/transforms-3/aea21e2fb74d9309c123e8dcaf489d0d/transformed/jetified-ui-1.0.2/res/values-as/values-as.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,200,285,378,475,581,670,760,828,900,979,1045",
+                        "endColumns": "94,84,92,96,105,88,89,67,71,78,65,117",
+                        "endOffsets": "195,280,373,470,576,665,755,823,895,974,1040,1158"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,200,285,378,475,581,670,760,828,900,1080,1146",
+                        "endColumns": "94,84,92,96,105,88,89,67,71,78,65,117",
+                        "endOffsets": "195,280,373,470,576,665,755,823,895,974,1141,1259"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,6 +1,7 @@
 package com.acme.homehealthy.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -12,7 +13,9 @@ import com.acme.homehealthy.data.models.Routine
 import com.acme.homehealthy.data.models.Training
 import com.acme.homehealthy.data.models.User
 import com.acme.homehealthy.screens.composableScreens.*
+import com.acme.homehealthy.utils.presentation.GoogleSignInButtonUi
 
+@ExperimentalMaterialApi
 @ExperimentalFoundationApi
 @Composable
 fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: List<Diet>, user: User){
@@ -32,7 +35,10 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: Lis
         }
 
         composable(route = Screen.AuthScreen.route){
-            MainAutenticationBox(navController)
+            //MainAutenticationBox(navController)
+            GoogleSignInButtonUi() {
+                navController.navigate(Screen.MainScreen.route)
+            }
         }
         composable(route = Screen.SplashScreen.route){
             splashScreen(navController)
