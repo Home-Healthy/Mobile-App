@@ -2,7 +2,7 @@
 
 ## Mobile application for those seeking to increase and/or improve their physical fitness.
 
-###MAD Score
+### MAD Score
 ![ssdsd](https://user-images.githubusercontent.com/65046165/141595050-c2d7acbc-8d78-4a6f-9e24-d9f425e540f6.png)
 
 ![eeeeeeee](https://user-images.githubusercontent.com/65046165/141595126-8b9b2631-b158-496e-ba9a-e97fda377258.png)
