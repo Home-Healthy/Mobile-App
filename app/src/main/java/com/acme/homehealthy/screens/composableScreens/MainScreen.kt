@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
@@ -43,7 +44,7 @@ fun MainScreen(_routines: List<Routine>, _trainings: List<Training>, navControll
     {
         Column() {
             Greetings(name = "Guapeton")
-            RoutinesList(routines = _routines)
+            RoutinesList(routines = _routines, navController)
 
             TrainingList(trainings = _trainings)
             Spacer(modifier = Modifier.height(26.dp))
@@ -64,7 +65,6 @@ fun MainScreen(_routines: List<Routine>, _trainings: List<Training>, navControll
         )
     }
 }
-
 
 
 @Composable
@@ -90,17 +90,17 @@ fun Greetings(name: String) {
 
 
 @Composable
-fun RoutinesList(routines: List<Routine>) {
+fun RoutinesList(routines: List<Routine>, navController: NavController) {
     LazyRow() {
         items(routines) { routine ->
-            RoutinesRow(routine)
+            RoutinesRow(routine,navController)
         }
     }
 }
 
 
 @Composable
-fun RoutinesRow(routines: Routine) {
+fun RoutinesRow(routines: Routine, navController: NavController) {
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
@@ -112,7 +112,7 @@ fun RoutinesRow(routines: Routine) {
             .padding(horizontal = 15.dp, vertical = 20.dp)
             .fillMaxWidth()
     ) {
-        Column() {
+        Column(modifier = Modifier.clickable { navController.navigate(Screen.RoutineDetailScreen.route) }) {
             Text(
                 text = routines.name,
                 style = MaterialTheme.typography.h2,
@@ -135,13 +135,16 @@ fun trainingsView(trainings: Training) {
     var imgUrl: String
     if (trainings.id == 1L) {
         imgUrl =
-            "https://elcomercio.pe/resizer/czgVq4F-823qxacsPteSJCzm0M8=/980x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/ULW4UUDPXJBU7GEARPRFLEWSYU.jpg"
+            "https://www.businessinsider.in/photo/75764297/How-to-master-the-bench-press-and-the-equipment-you-need-to-build-your-own-setup.jpg"
     } else if (trainings.id == 2L) {
         imgUrl =
-            "https://i0.wp.com/once.pe/wp-content/uploads/2021/01/cuto-dice-su-verdad-e1612117753484.jpg"
-    } else {
+            "https://images.ctfassets.net/3s5io6mnxfqz/34Npc5PKLKJi6HIYvFw9XI/3e45754912cf266e7401cb8074c63239/AdobeStock_386146138_2.jpeg?fm=jpg&w=900&fl=progressive"
+    } else if (trainings.id == 3L){
         imgUrl =
-            "https://cdn.futbolperuano.com/sdi/2018/09/27/juan-vargas-se-defendio-de-las-criticas-sobre-su-peso-674355.jpg"
+            "https://lh3.googleusercontent.com/proxy/TFPjbNgBh9mhNxMamxjdYWLuHAvjIBInIGka_kUsCBzDyYHFakz4ZwarWFfnNrDRljonYmMbia5-6LRmTuXRl_PzaydzVCvWkaWS4IAa1jExJROz3vSLFiNdVQ"
+    }
+    else{
+        imgUrl="https://media.revistagq.com/photos/5ecea90bd6d588d6f671d17c/16:9/w_2560%2Cc_limit/ejercicios-comba.jpg"
     }
 
     Box(
@@ -271,12 +274,13 @@ fun BottomNavItem(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier.clickable {
-            if(item.tittle=="Training"){
-            navController.navigate(Screen.MainScreen.route)}
-            else if (item.tittle == "Nutrition"){
-            navController.navigate(Screen.DietScreen.route)}
-            else if(item.tittle == "Profile"){
-                navController.navigate(Screen.ProfileScreen.route) }
+            if (item.tittle == "Training") {
+                navController.navigate(Screen.MainScreen.route)
+            } else if (item.tittle == "Nutrition") {
+                navController.navigate(Screen.DietScreen.route)
+            } else if (item.tittle == "Profile") {
+                navController.navigate(Screen.ProfileScreen.route)
+            }
         }
     ) {
         Box(
@@ -285,20 +289,25 @@ fun BottomNavItem(
                 .clip(RoundedCornerShape(12.dp))
                 .background(if (isSelected) Purple700 else Color.Transparent)
         ) {
-            Icon(
-                painter = painterResource(id = item.iconId),
-                contentDescription = item.tittle,
-                tint = if (isSelected) Rose else Color.White,
-                modifier = Modifier
-                    .size(20.dp)
+            Row() {
 
+                Icon(
+                    painter = painterResource(id = item.iconId),
+                    contentDescription = item.tittle,
+                    tint = if (isSelected) Rose else Color.White,
+                    modifier = Modifier
+                        .size(20.dp)
+                )
+                if (isSelected) {
+                    Text(
+                        text = item.tittle,
+                        fontWeight = FontWeight.ExtraLight,
+                        color = Gray
+                    )
+                }
+            }
 
-            )
         }
-        Text(
-            text = item.tittle,
-            color = if (isSelected) Rose else Color.White
-        )
 
     }
 

@@ -12,7 +12,9 @@ import com.acme.homehealthy.data.models.*
 import com.acme.homehealthy.screens.composableScreens.*
 import com.acme.homehealthy.utils.presentation.AuthScreen
 import com.acme.homehealthy.utils.presentation.GoogleSignInButtonUi
+import kotlinx.coroutines.InternalCoroutinesApi
 
+@InternalCoroutinesApi
 @ExperimentalMaterialApi
 @ExperimentalFoundationApi
 @Composable
@@ -41,6 +43,9 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: Lis
         }
         composable(route = Screen.SplashScreen.route){
             splashScreen(navController)
+        }
+        composable(route= Screen.RoutineDetailScreen.route){
+            RoutineDetailScreen()
         }
         
 
