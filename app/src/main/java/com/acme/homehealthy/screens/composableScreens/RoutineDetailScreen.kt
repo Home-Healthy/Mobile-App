@@ -9,10 +9,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.acme.homehealthy.ui.theme.Strength
 import com.acme.homehealthy.ui.theme.TransparentBlack
+import com.acme.homehealthy.ui.theme.WheightLose
+import com.acme.homehealthy.ui.theme.hypertrophy
 
 @Composable
-fun RoutineDetailScreen(){
+fun RoutineDetailScreen(navController: NavController, bodyPart: String){
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -43,15 +47,11 @@ fun RoutineGoals(){
                 .padding(horizontal = 15.dp, vertical = 20.dp)
                 .fillMaxWidth()
         ){
-            FoodStats(valueStat = 96, color = Color.Red, statName = "HIpertrofy")
+            FoodStats(valueStat = 96, color = hypertrophy, statName = "Hypertrofphy")
             Spacer(modifier = Modifier.height(25.dp))
-
-            FoodStats(valueStat = 30, color = Color.Green, statName = "Strengh")
+            FoodStats(valueStat = 30, color = Strength, statName = "Strengh")
             Spacer(modifier = Modifier.height(25.dp))
-
-            FoodStats(valueStat = 80, color = Color.Blue, statName = "Wheight Loss")
-
-
+            FoodStats(valueStat = 80, color = WheightLose, statName = "Wheight Loss")
         }
     }
 }

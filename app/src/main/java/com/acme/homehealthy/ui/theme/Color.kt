@@ -27,3 +27,7 @@ val ProteinBar = Color(0xFF0987EB)
 val CarbsBar = Color(0xFF036B07)
 val FatBar = Color(0xFF7A0311)
 
+val hypertrophy = Color(0xAB064B83)
+val Strength = Color(0xA8A1DA08)
+val WheightLose = Color(0xA6F303EF)
+

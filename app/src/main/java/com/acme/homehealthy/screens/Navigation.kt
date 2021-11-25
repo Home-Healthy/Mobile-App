@@ -44,8 +44,15 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: Lis
         composable(route = Screen.SplashScreen.route){
             splashScreen(navController)
         }
-        composable(route= Screen.RoutineDetailScreen.route){
-            RoutineDetailScreen()
+        composable(route= Screen.RoutineDetailScreen.route + "{name}", arguments = listOf(
+            navArgument("name"){
+                type = NavType.StringType
+                defaultValue = "CHEAST"
+                nullable = false
+            }
+        )){
+            entry ->
+            entry.arguments?.getString("name")?.let { RoutineDetailScreen(navController = navController, bodyPart = it) }
         }
         
 

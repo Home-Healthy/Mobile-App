@@ -112,7 +112,7 @@ fun RoutinesRow(routines: Routine, navController: NavController) {
             .padding(horizontal = 15.dp, vertical = 20.dp)
             .fillMaxWidth()
     ) {
-        Column(modifier = Modifier.clickable { navController.navigate(Screen.RoutineDetailScreen.route) }) {
+        Column(modifier = Modifier.clickable { navController.navigate(Screen.RoutineDetailScreen.withArgs(routines.name)) }) {
             Text(
                 text = routines.name,
                 style = MaterialTheme.typography.h2,
