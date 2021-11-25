@@ -10,13 +10,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.acme.homehealthy.data.models.RoutineDetail
 import com.acme.homehealthy.ui.theme.Strength
 import com.acme.homehealthy.ui.theme.TransparentBlack
 import com.acme.homehealthy.ui.theme.WheightLose
 import com.acme.homehealthy.ui.theme.hypertrophy
 
 @Composable
-fun RoutineDetailScreen(navController: NavController, bodyPart: String){
+fun RoutineDetailScreen(navController: NavController, bodyPart: String, routineDetailList: List<RoutineDetail>){
     Box(
         modifier = Modifier
             .fillMaxWidth()
