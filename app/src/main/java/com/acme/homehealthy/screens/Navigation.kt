@@ -18,7 +18,7 @@ import kotlinx.coroutines.InternalCoroutinesApi
 @ExperimentalMaterialApi
 @ExperimentalFoundationApi
 @Composable
-fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: List<Diet>, user: User){
+fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: List<Diet>, user: User, _routineDetailList: List<RoutineDetail>){
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.AuthScreen.route){
         composable(route = Screen.MainScreen.route){
@@ -52,7 +52,7 @@ fun Navigation(_routines: List<Routine>, _trainings: List<Training>, _diets: Lis
             }
         )){
             entry ->
-            entry.arguments?.getString("name")?.let { RoutineDetailScreen(navController = navController, bodyPart = it) }
+            entry.arguments?.getString("name")?.let { RoutineDetailScreen(navController = navController, bodyPart = it, _routineDetailList) }
         }
         
 

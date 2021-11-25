@@ -70,7 +70,7 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 )
-                Navigation(routines, trainings, diets, user)
+                Navigation(routines, trainings, diets, user, routineDetailList)
             }
         }
     }
