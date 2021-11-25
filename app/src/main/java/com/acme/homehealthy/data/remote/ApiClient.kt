@@ -57,9 +57,14 @@ object ApiClient {
     }
 
     //RoutineDetail
-    var routineDetailInterface:RoutineInterface? = null
+    var routineDetailInterface:RoutineDetailInterface? = null
     fun buildRoutineDetail(): RoutineDetailInterface?{
         val builder: Retrofit.Builder = Retrofit.Builder()
+            .baseUrl(API_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+        var retrofit:Retrofit = builder.build()
+        routineDetailInterface = retrofit.create(RoutineDetailInterface::class.java)
+        return routineDetailInterface as RoutineDetailInterface
     }
 
 

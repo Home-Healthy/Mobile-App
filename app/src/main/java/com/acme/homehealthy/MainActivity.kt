@@ -9,10 +9,6 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import com.acme.homehealthy.data.models.Diet
-import com.acme.homehealthy.data.models.Routine
-import com.acme.homehealthy.data.models.Training
-import com.acme.homehealthy.data.models.User
 import com.acme.homehealthy.data.remote.ApiClient
 import com.acme.homehealthy.screens.Navigation
 import com.acme.homehealthy.ui.theme.HomeHealthyTheme
@@ -26,6 +22,8 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.Lifecycle
+import com.acme.homehealthy.data.models.*
+import kotlinx.coroutines.InternalCoroutinesApi
 
 class MainActivity : ComponentActivity() {
 
@@ -36,7 +34,9 @@ class MainActivity : ComponentActivity() {
     var diets by mutableStateOf(listOf<Diet>())
     var users by mutableStateOf(listOf<User>())
     var user: User = User(5, "Sebastian", "Toulier", "sebas@gmail.com", "up mm", "Pro", 5)
+    var routineDetailList by mutableStateOf(listOf<RoutineDetail>())
 
+    @InternalCoroutinesApi
     @ExperimentalPermissionsApi
     @ExperimentalMaterialApi
     @ExperimentalFoundationApi
@@ -136,6 +136,24 @@ class MainActivity : ComponentActivity() {
             override fun onFailure(call: Call<List<User>>, t: Throwable) {
                 Log.d("MainActivity", t.toString())
             }
+        })
+    }
+
+    private fun loadRoutineDetailList(){
+        val routineDetailInterface = ApiClient.buildRoutineDetail()
+        val fetchRoutinesDetail = routineDetailInterface?.fetchRoutineDetails()
+        fetchRoutinesDetail?.enqueue(object : Callback<List<RoutineDetail>>{
+            override fun onResponse(
+                call: Call<List<RoutineDetail>>,
+                response: Response<List<RoutineDetail>>
+            ) {
+                routineDetailList = response.body()!!
+            }
+
+            override fun onFailure(call: Call<List<RoutineDetail>>, t: Throwable) {
+                Log.d("FAIED: LOAD ROUTINE DETAILS", t.toString())
+            }
+
         })
     }
 
