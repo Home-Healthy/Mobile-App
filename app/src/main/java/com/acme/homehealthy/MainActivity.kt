@@ -45,6 +45,7 @@ class MainActivity : ComponentActivity() {
         loadRoutines()
         loadTrainings()
         //loadUsers()
+        loadRoutineDetailList()
         loadDiets()
         setContent {
             HomeHealthyTheme {

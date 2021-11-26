@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/sebastian/Escritorio/Mobile-App/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "C:\\Users\\sebas\\OneDrive - Universidad Peruana de Ciencias\\2021-02\\UNIVERSITY\\Apps Moviles\\0TRABAJOFINAL\\Mobile-App\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "/home/sebastian/.gradle/caches/transforms-3/d493266bf6d07216c4e1384e763ba50b/transformed/appcompat-1.3.1/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\sebas\\.gradle\\caches\\transforms-3\\d493266bf6d07216c4e1384e763ba50b\\transformed\\appcompat-1.3.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

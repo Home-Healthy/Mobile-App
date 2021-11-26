@@ -141,7 +141,7 @@ fun trainingsView(trainings: Training) {
             "https://images.ctfassets.net/3s5io6mnxfqz/34Npc5PKLKJi6HIYvFw9XI/3e45754912cf266e7401cb8074c63239/AdobeStock_386146138_2.jpeg?fm=jpg&w=900&fl=progressive"
     } else if (trainings.id == 3L){
         imgUrl =
-            "https://lh3.googleusercontent.com/proxy/TFPjbNgBh9mhNxMamxjdYWLuHAvjIBInIGka_kUsCBzDyYHFakz4ZwarWFfnNrDRljonYmMbia5-6LRmTuXRl_PzaydzVCvWkaWS4IAa1jExJROz3vSLFiNdVQ"
+            "https://cdn.static.aptavs.com/imagenes/press-militar-de-pie-o-press-militar-sentado_905x603.jpg"
     }
     else{
         imgUrl="https://media.revistagq.com/photos/5ecea90bd6d588d6f671d17c/16:9/w_2560%2Cc_limit/ejercicios-comba.jpg"
